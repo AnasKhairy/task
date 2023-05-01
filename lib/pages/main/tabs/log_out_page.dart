@@ -15,6 +15,7 @@ class LogOutPage extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             // TODO: AutoRouter.of(context).pop();
+            // efjdshfkas
           },
           child: const Text('Log Out'),
         ),
