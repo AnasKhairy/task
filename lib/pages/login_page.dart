@@ -1,15 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-
-import '../my_button.dart';
+import 'package:task_number_one/widgets/my_button.dart';
 
 @RoutePage()
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginPage> createState() => _LoginState();
 }
 
 final form = FormGroup({
@@ -25,13 +24,13 @@ final form = FormGroup({
   ]),
 });
 
-class _LoginState extends State<Login> {
+class _LoginState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return ReactiveForm(
       formGroup: form,
       child: Scaffold(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Colors.blue,
         body: Container(
           padding: const EdgeInsets.all(30),
           child: Column(
@@ -65,15 +64,14 @@ class _LoginState extends State<Login> {
                 child: ReactiveTextField(
                   obscureText: true,
                   formControlName: 'password',
-                  decoration: const InputDecoration(
-                      labelText: "  Enter Your password"),
+                  decoration:
+                      const InputDecoration(labelText: "  Enter Your password"),
                 ),
               ),
               const SizedBox(
                 height: 30,
               ),
-
-              MyButton() ,
+              const MyButton(),
 /*               ElevatedButton(
                 child: const Text('Login'),
                 onPressed: () {

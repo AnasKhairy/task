@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://data.binance.com/api/v3/';
+    baseUrl ??= 'https://data.binance.com';
   }
 
   final Dio _dio;
@@ -21,26 +21,26 @@ class _ApiService implements ApiService {
   String? baseUrl;
 
   @override
-  Future<List<Ticker>> getTickers() async {
+  Future<List<TickerModel>> getTickers() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Ticker>>(Options(
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<TickerModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'ticker/24hr',
+              '/api/v3/ticker/24hr',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) => Ticker.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => TickerModel.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }

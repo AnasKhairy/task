@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task_number_one/components/bottom_navigation_bar.dart';
 
 import 'route/app_router.dart';
 
