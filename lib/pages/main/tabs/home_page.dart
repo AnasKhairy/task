@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:task_number_one/service/api_service.dart';
 import 'package:dio/dio.dart';
 
-import '../models/toker_model.dart';
-import '../widgets/ticker_list_item_view.dart';
+import '../../../models/toker_model.dart';
+import '../../../widgets/ticker_list_item_view.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
