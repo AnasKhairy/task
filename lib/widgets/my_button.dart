@@ -20,8 +20,8 @@ class MyButton extends StatelessWidget {
       ),
     );
   }
-}
 
-void _onPressed(BuildContext context) {
-  context.router.replaceAll([const HomeRoute()]);
+  void _onPressed(BuildContext context) {
+    context.router.replaceAll([const HomeRoute()]);
+  }
 }
